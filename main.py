@@ -6,7 +6,7 @@ zakonczenie = "1"
 with open("napisy.txt") as plik:
     for i in range(len(plik.readline())):
         linijka = plik.readline()
-# a.
+    # a.
         if len(linijka) % 2 == 0:
             ilosc_Parzystych += 1
     # b.
