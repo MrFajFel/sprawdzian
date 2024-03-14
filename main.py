@@ -3,8 +3,11 @@ tyle_Samo = 0
 same_Zera = 0
 same_Jedynki = 0
 zakonczenie = "1"
+ile_Konczy =0
 with open("napisy.txt") as plik:
     for i in range(len(plik.readline())):
+        if plik.readline() == "":
+            None
         linijka = plik.readline()
     # a.
         if len(linijka) % 2 == 0:
@@ -21,10 +24,10 @@ with open("napisy.txt") as plik:
     # d.
         for i in range(len(linijka)):
             if linijka[-2] == zakonczenie:
-                print("konczy sie 1:" + linijka)
+                ile_Konczy+=1
         #e.
         od_Tylu = "".join(reversed(plik.readline()))
-        if od_Tylu == plik.readline():
+        if od_Tylu == plik.readline() and plik.readline() != "":
             print("palindrom:"+od_Tylu +" "+ linijka)
         #f.
         for k in range(0,17):
@@ -35,3 +38,4 @@ with open("napisy.txt") as plik:
     print("tyle jest napisow takich takich samych:"+str(tyle_Samo))
     print("Tyle bylo samych Jedynek:" + str(same_Jedynki))
     print("Tyle jest samych zer:"+str(same_Zera))
+    print("Tyle konczy sie na 1:"+str(ile_Konczy))
